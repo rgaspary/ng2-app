@@ -4,7 +4,12 @@
   "description": "Angular2 App built following the Scotch.io tutorial",
   "main": "index.js",
   "scripts": {
-    "lite": "lite-server"
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "lite": "lite-server",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings",
+    "postinstall": "typings install"
   },
   "repository": {
     "type": "git",
@@ -17,6 +22,9 @@
   },
   "homepage": "https://github.com/rgaspary/ng2-app#readme",
   "devDependencies": {
-    "lite-server": "^2.2.2"
+    "concurrently": "^3.1.0",
+    "lite-server": "^2.2.2",
+    "typescript": "^2.0.8",
+    "typings": "^2.0.0"
   }
 }
